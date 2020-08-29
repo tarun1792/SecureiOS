@@ -15,9 +15,9 @@ Pod::Spec.new do |spec|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  spec.name         = "SecurityiOS"
-  spec.version      = "0.0.1"
-  spec.summary      = "SecurityiOS provides security checks for iOS application."
+   spec.name         = "SecurityiOS"
+   spec.version      = "0.0.1"
+   spec.summary      = "SecurityiOS provides security checks for iOS application."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -26,7 +26,7 @@ Pod::Spec.new do |spec|
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   spec.description  = "SecurityiOS is used to check the basic security requirements for iOS Applications"
 
-  spec.homepage     = "https://github.com/tarun1792/SecurityiOS"
+   spec.homepage     = "https://github.com/tarun1792/SecurityiOS"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -78,7 +78,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "https://github.com/tarun1792/SecurityiOS.git", :tag => "#{spec.version}" }
+   spec.source       = { :git => "https://github.com/tarun1792/SecurityiOS.git", :tag => "#{spec.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -89,7 +89,7 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "SecurityiOS/*.{h,swift}"
+   spec.source_files  = "SecureiOS/*.{h,swift}"
   #spec.exclude_files = "Classes/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"
