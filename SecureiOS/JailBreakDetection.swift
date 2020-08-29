@@ -14,7 +14,6 @@ internal class JailBreakDetection{
     internal static func check()->Bool{        
         let suspicousFileCheck = suspicousFilesCheck()
         let privateDirectories = restrictedDirectoriesWriteableCheck()
-        
         return suspicousFileCheck || privateDirectories
     }
     
