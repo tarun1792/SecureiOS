@@ -15,9 +15,9 @@ Pod::Spec.new do |spec|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-   spec.name         = "SecurityiOS"
-   spec.version      = "0.1.1"
-   spec.summary      = "SecurityiOS provides security checks for iOS application."
+   spec.name         = "SecureiOS"
+   spec.version      = "0.1.2"
+   spec.summary      = "SecureiOS provides security checks for iOS application."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -26,7 +26,7 @@ Pod::Spec.new do |spec|
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   spec.description  = "SecurityiOS is used to check the basic security requirements for iOS Applications"
 
-   spec.homepage     = "https://github.com/tarun1792/SecurityiOS"
+   spec.homepage     = "https://github.com/tarun1792/SecureiOS"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -78,7 +78,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-   spec.source       = { :git => "https://github.com/tarun1792/SecurityiOS.git", :tag => "#{spec.version}" }
+   spec.source       = { :git => "https://github.com/tarun1792/SecureiOS.git", :tag => "#{spec.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
