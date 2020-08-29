@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
    spec.name         = "SecurityiOS"
-   spec.version      = "0.0.1"
+   spec.version      = "0.1.1"
    spec.summary      = "SecurityiOS provides security checks for iOS application."
 
   # This description is used to generate tags and improve search results.
@@ -38,7 +38,7 @@ Pod::Spec.new do |spec|
   #
 
   # spec.license      = "MIT (example)"
-  # spec.license      = { :type => "MIT", :file => "LICENSE" }
+   spec.license      = { :type => "MIT", :file => "LICENSE" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
