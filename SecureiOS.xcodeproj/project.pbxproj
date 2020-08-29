@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE5550CE24FAB95200B79D63 /* SecureiOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5550CD24FAB95200B79D63 /* SecureiOS.swift */; };
 		EEBBD42A24FAB02400CE5937 /* SecureiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEBBD42024FAB02400CE5937 /* SecureiOS.framework */; };
 		EEBBD42F24FAB02400CE5937 /* SecureiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBBD42E24FAB02400CE5937 /* SecureiOSTests.swift */; };
 		EEBBD43124FAB02400CE5937 /* SecureiOS.h in Headers */ = {isa = PBXBuildFile; fileRef = EEBBD42324FAB02400CE5937 /* SecureiOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EEBBD43B24FAB11900CE5937 /* JailBreakDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBBD43A24FAB11900CE5937 /* JailBreakDetection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,12 +25,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EE5550CD24FAB95200B79D63 /* SecureiOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureiOS.swift; sourceTree = "<group>"; };
 		EEBBD42024FAB02400CE5937 /* SecureiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SecureiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEBBD42324FAB02400CE5937 /* SecureiOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecureiOS.h; sourceTree = "<group>"; };
 		EEBBD42424FAB02400CE5937 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEBBD42924FAB02400CE5937 /* SecureiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SecureiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEBBD42E24FAB02400CE5937 /* SecureiOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureiOSTests.swift; sourceTree = "<group>"; };
 		EEBBD43024FAB02400CE5937 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEBBD43A24FAB11900CE5937 /* JailBreakDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JailBreakDetection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 			children = (
 				EEBBD42324FAB02400CE5937 /* SecureiOS.h */,
 				EEBBD42424FAB02400CE5937 /* Info.plist */,
+				EEBBD43A24FAB11900CE5937 /* JailBreakDetection.swift */,
+				EE5550CD24FAB95200B79D63 /* SecureiOS.swift */,
 			);
 			path = SecureiOS;
 			sourceTree = "<group>";
@@ -148,6 +154,7 @@
 				TargetAttributes = {
 					EEBBD41F24FAB02400CE5937 = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 					};
 					EEBBD42824FAB02400CE5937 = {
 						CreatedOnToolsVersion = 11.5;
@@ -195,6 +202,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE5550CE24FAB95200B79D63 /* SecureiOS.swift in Sources */,
+				EEBBD43B24FAB11900CE5937 /* JailBreakDetection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +349,7 @@
 		EEBBD43524FAB02400CE5937 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = K8689CZ4BV;
@@ -356,6 +366,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.scholacore.SecureiOS;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -364,6 +375,7 @@
 		EEBBD43624FAB02400CE5937 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = K8689CZ4BV;
@@ -388,6 +400,7 @@
 		EEBBD43824FAB02400CE5937 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K8689CZ4BV;
 				INFOPLIST_FILE = SecureiOSTests/Info.plist;
@@ -406,6 +419,7 @@
 		EEBBD43924FAB02400CE5937 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K8689CZ4BV;
 				INFOPLIST_FILE = SecureiOSTests/Info.plist;
