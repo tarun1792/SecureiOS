@@ -24,10 +24,9 @@ Pod::Spec.new do |spec|
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  spec.description  = <<-DESC
-                   DESC
+  spec.description  = "SecurityiOS is used to check the basic security requirements for iOS Applications"
 
-  spec.homepage     = "http://tarun1792/SecurityiOS"
+  spec.homepage     = "https://github.com/tarun1792/SecurityiOS"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -79,7 +78,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "http://tarun1792/SecurityiOS.git", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/tarun1792/SecurityiOS.git", :tag => "#{spec.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
