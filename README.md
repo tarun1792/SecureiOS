@@ -8,13 +8,21 @@ SecureiOS is a one-stop framework to implement security features in your iOS App
 
 # Features
 
-- JailbreakDetection.
-``` swift
+### JailbreakDetection.
+```Swift
 SecureiOS.jailBreakCheck()
 ```
-- Application Background Splash Screen Implementation.
-```
+### Application Background Splash Screen Implementation.
+```Swift
 SecureiOS.setupBackgroundSplashScreen(&window, image)
+```
+### Emulator Checker
+```Swift
+let emulatorCheck = SecureiOS.emulatorCheck()
+```
+### Proxy Checker
+```Swift
+let proxyCheck = SecureiOS.proxyCheck()
 ```
 
 ## Author
