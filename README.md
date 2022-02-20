@@ -23,4 +23,4 @@ Tarun Kaushik
 
 ## License
 
-UserDefaults is available under the MIT license. See the LICENSE file for more info.
+SecureiOS is available under the MIT license. See the LICENSE file for more info.
