@@ -20,7 +20,6 @@ class BackgroundModeOverlay{
         imageView.backgroundColor = UIColor.white
         imageView.snapshotView(afterScreenUpdates: true)
         imageView.frame = window.bounds
-        
         window.addSubview(imageView)
     }
     

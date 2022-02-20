@@ -31,11 +31,11 @@ public class SecureiOS{
      
      Usage example
      ```
-     SecureiOS.setupSplashScreen(&window,image)
+     SecureiOS.setupBackgroundSplashScreen(&window,image)
      ```
      */
     
-    public static func setupSplashScreen(_ window:inout UIWindow?,_ image: UIImage?){
+    public static func setupBackgroundSplashScreen(_ window:inout UIWindow?,_ image: UIImage?){
         BackgroundModeOverlay.showSplashImage(&window, image: image)
     }
     

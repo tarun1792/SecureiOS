@@ -14,8 +14,10 @@ internal class JailBreakDetection{
     internal static func check()->Bool{        
         let suspicousFileCheck = suspicousFilesCheck()
         let privateDirectories = restrictedDirectoriesWriteableCheck()
+        let checkSuspiciousFilesCanOpen = checkSuspiciousFilesCanBeOpened()
+        let checkRestrictedDirectorieWriteable = checkRestrictedDirectoriesWriteable()
         
-        return suspicousFileCheck || privateDirectories
+        return suspicousFileCheck || privateDirectories || checkSuspiciousFilesCanOpen || checkRestrictedDirectorieWriteable
     }
     
     private static func suspicousFilesCheck()->Bool{
@@ -98,4 +100,50 @@ internal class JailBreakDetection{
         }
          return false
     }
+    
+    private static func checkSuspiciousFilesCanBeOpened() -> Bool{
+
+        let paths = [
+            "/.installed_unc0ver",
+            "/.bootstrapped_electra",
+            "/Applications/Cydia.app",
+            "/Library/MobileSubstrate/MobileSubstrate.dylib",
+            "/etc/apt",
+            "/var/log/apt"
+        ]
+
+        for path in paths {
+
+            if FileManager.default.isReadableFile(atPath: path) {
+                return false
+            }
+        }
+
+        return true
+    }
+    
+    
+    private static func checkRestrictedDirectoriesWriteable() -> Bool {
+
+         let paths = [
+             "/",
+             "/root/",
+             "/private/",
+             "/jb/"
+         ]
+
+         // If library won't be able to write to any restricted directory the return(false, ...) is never reached
+         // because of catch{} statement
+         for path in paths {
+             do {
+                 let pathWithSomeRandom = path+UUID().uuidString
+                 try "AmIJailbroken?".write(toFile: pathWithSomeRandom, atomically: true, encoding: String.Encoding.utf8)
+                 try FileManager.default.removeItem(atPath: pathWithSomeRandom) // clean if succesfully written
+                 return false
+             } catch {}
+         }
+
+         return true
+     }
+    
 }

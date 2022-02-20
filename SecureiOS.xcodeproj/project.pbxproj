@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		EE5550CE24FAB95200B79D63 /* SecureiOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5550CD24FAB95200B79D63 /* SecureiOS.swift */; };
 		EE5550D024FC0C8F00B79D63 /* BackgroundModeOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5550CF24FC0C8F00B79D63 /* BackgroundModeOverlay.swift */; };
+		EE92173D25111BF100F87BA4 /* SecureUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92173C25111BF100F87BA4 /* SecureUserDefaults.swift */; };
 		EEBBD42A24FAB02400CE5937 /* SecureiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEBBD42024FAB02400CE5937 /* SecureiOS.framework */; };
 		EEBBD42F24FAB02400CE5937 /* SecureiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBBD42E24FAB02400CE5937 /* SecureiOSTests.swift */; };
 		EEBBD43124FAB02400CE5937 /* SecureiOS.h in Headers */ = {isa = PBXBuildFile; fileRef = EEBBD42324FAB02400CE5937 /* SecureiOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		EE5550CD24FAB95200B79D63 /* SecureiOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureiOS.swift; sourceTree = "<group>"; };
 		EE5550CF24FC0C8F00B79D63 /* BackgroundModeOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundModeOverlay.swift; sourceTree = "<group>"; };
+		EE92173C25111BF100F87BA4 /* SecureUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureUserDefaults.swift; sourceTree = "<group>"; };
 		EEBBD42024FAB02400CE5937 /* SecureiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SecureiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEBBD42324FAB02400CE5937 /* SecureiOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecureiOS.h; sourceTree = "<group>"; };
 		EEBBD42424FAB02400CE5937 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				EEBBD43A24FAB11900CE5937 /* JailBreakDetection.swift */,
 				EE5550CD24FAB95200B79D63 /* SecureiOS.swift */,
 				EE5550CF24FC0C8F00B79D63 /* BackgroundModeOverlay.swift */,
+				EE92173C25111BF100F87BA4 /* SecureUserDefaults.swift */,
 			);
 			path = SecureiOS;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE5550D024FC0C8F00B79D63 /* BackgroundModeOverlay.swift in Sources */,
+				EE92173D25111BF100F87BA4 /* SecureUserDefaults.swift in Sources */,
 				EE5550CE24FAB95200B79D63 /* SecureiOS.swift in Sources */,
 				EEBBD43B24FAB11900CE5937 /* JailBreakDetection.swift in Sources */,
 			);
@@ -281,7 +285,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -338,7 +342,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -353,7 +357,10 @@
 		EEBBD43524FAB02400CE5937 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = K8689CZ4BV;
@@ -379,7 +386,10 @@
 		EEBBD43624FAB02400CE5937 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = K8689CZ4BV;

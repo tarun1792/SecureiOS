@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
    spec.name         = "SecureiOS"
-   spec.version      = "0.1.2"
+   spec.version      = "0.1.3"
    spec.summary      = "SecureiOS provides security checks for iOS application."
 
   # This description is used to generate tags and improve search results.
@@ -66,7 +66,7 @@ Pod::Spec.new do |spec|
    spec.platform     = :ios, "10.0"
 
   #  When using multiple platforms
-   spec.ios.deployment_target = "10.0"
+   spec.ios.deployment_target = "13.0"
   # spec.osx.deployment_target = "10.7"
   # spec.watchos.deployment_target = "2.0"
   # spec.tvos.deployment_target = "9.0"
