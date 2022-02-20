@@ -20,7 +20,7 @@ public class SecureiOS{
      ```
      */
     
-    public static func jailBreakCheck()->Bool{
+    public static func jailBreakCheck() -> Bool{
         return JailBreakDetection.check()
     }
     
@@ -53,5 +53,29 @@ public class SecureiOS{
         BackgroundModeOverlay.removeSplashImage(&window)
     }
     
+    /*
+     Determine if the app is running on emulator
+     
+     Usage example
+     ```
+     let emulator = SecureiOS.emulatorCheck()
+     ```
+     */
     
+    public static func emulatorCheck() -> Bool {
+        return EmulatorChecker.emulatorCheck()
+    }
+    
+    /*
+     Determine if the device proxy settings is enabled
+     
+     Usage example
+     ```
+     let emulator = SecureiOS.proxyCheck()
+     ```
+     */
+    
+    public static func proxyCheck() -> Bool {
+        return ProxyChecker.proxyCheck()
+    }
 }

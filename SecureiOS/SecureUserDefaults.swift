@@ -12,9 +12,8 @@ import CryptoKit
 
 public class SecureUserDefaults{
     
-      
-    private static let iv = AES.GCM.Nonce()
-    private static let key = SymmetricKey(size: .bits128)
+    private static let iv = ChaChaPoly.Nonce()
+    private static let key = SymmetricKey(size: .bits256)
     
     public init(){}
     
@@ -29,26 +28,25 @@ public class SecureUserDefaults{
     
     public func saveData(forKey key:String,value:String){
         getKey()
-        
-        
         let userDefault = UserDefaults.standard
         // Perform some private encryption logic here
-        let data = self.encryptData(value:value)!
-        // finish the encrption
-        
-        userDefault.setValue(data, forKey: key)
+        if let data = self.encryptData(value:value) {
+             // finish the encrption
+            userDefault.setValue(data, forKey: key)
+        }
     }
     
     public func getData(for key:String) -> String?{
         let userDefault = UserDefaults.standard
         
-        let data = userDefault.value(forKey: key) as! Data
-        
-        // perform some decryption logic here
-        let decryptedString = self.decryptData(data:data)
-        // finshed getting the decoded data
-        
-        return decryptedString
+        if let data = userDefault.value(forKey: key) as? Data{
+            // perform some decryption logic here
+            let decryptedString = self.decryptData(data:data)
+            // finshed getting the decoded data
+            return decryptedString
+        }
+    
+       return nil
     }
     
     
@@ -58,10 +56,10 @@ public class SecureUserDefaults{
         do
         {
             let dataToEncrypt = value.data(using: .utf8)
-            let secureSealBox = try AES.GCM.seal(dataToEncrypt!,using:SecureUserDefaults.key,nonce:SecureUserDefaults.iv)
+            let secureSealBox = try ChaChaPoly.seal(dataToEncrypt!,using:SecureUserDefaults.key,nonce:SecureUserDefaults.iv)
             encryptData = secureSealBox.combined
         }catch{
-            print("error")
+            print("catch: \(error)")
         }
         
         return encryptData
@@ -73,16 +71,18 @@ public class SecureUserDefaults{
         
         print(data)
 
-        let sealedBoxToOpen = try! AES.GCM.SealedBox(combined: data)
-
-        if let decryptedData = try? AES.GCM.open(sealedBoxToOpen, using: SecureUserDefaults.key) {
-              decryptedString = String(data: decryptedData, encoding: .utf8)!
-        } else {
-            print("error",CryptoKitError.self)
-            // Ouch, doSomething() threw an error.
+        let sealedBoxToOpen = try! ChaChaPoly.SealedBox(combined: data)
+    
+        do {
+            let decryptedData = try ChaChaPoly.open(sealedBoxToOpen, using: SecureUserDefaults.key)
+            if let decryptedStr = String(data: decryptedData, encoding: .utf8){
+                decryptedString = decryptedStr
+            }
+        }catch{
+            print("catch",error)
         }
 
-          return decryptedString
+        return decryptedString
     }
     
 }
