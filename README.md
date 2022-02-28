@@ -19,13 +19,11 @@ SecureUserDefaults provides you the funtionality to store data in encrypted form
 
 ### Usages
 #### Save Data
-Securely saves data on userDefault
 ```Swift
 SecureiOS.secureUserDefaults().saveData(forKey: "intData", value: intData)
 ```
 
 #### Get data
-Retrieve the saved data from userDefaults
 ```Swift
 guard let value = SecureiOS.secureUserDefaults().getAnyData(forKey: "key") as? String else {return}
 ```
