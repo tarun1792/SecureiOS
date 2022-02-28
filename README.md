@@ -6,6 +6,14 @@
 
 SecureiOS is a one-stop framework to implement security features in your iOS Application with minimum efforts requirement.
 
+
+### Installation
+Keychain is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
+
+```ruby
+pod "SecureiOS"
+```
+
 # Features
 
 ### JailbreakDetection.
