@@ -10,91 +10,86 @@ import Foundation
 import UIKit
 import CryptoKit
 
+enum SecureUserDefaultsError: Error{
+    case unknownError
+    case encodingError
+}
+
 public class SecureUserDefaults{
     
-    private static let iv = ChaChaPoly.Nonce()
-    private static let key = SymmetricKey(size: .bits256)
+    private let keychainWrapper = KeychainWrapper()
     
-    public init(){}
+    private init(){}
     
-    public static var standard:SecureUserDefaults {return SecureUserDefaults()}
-    
-    private func getKey(){
-        let string = SHA256.hash(data: "password".data(using:.utf8)!)
-      //  let data = string.data(using:.utf8)
-        print(string)
-       // print(data)
-    }
+    public static let standard:SecureUserDefaults = SecureUserDefaults()
     
     public func saveData(forKey key:String,value:String){
-        getKey()
         let userDefault = UserDefaults.standard
-        // Perform some private encryption logic here
-        if let data = self.encryptData(value:value) {
-             // finish the encrption
-            userDefault.setValue(data, forKey: key)
+        let hashedKey = self.getKeyHash(key: key)
+        
+        if let data = try? keychainWrapper.encrypt(text: value) {
+            userDefault.setValue(data, forKey: hashedKey)
         }
     }
     
-    public func getData(for key:String) -> String?{
-        let userDefault = UserDefaults.standard
+    public func saveData(forKey key: String, value: Any) {
+        let hashedKey = self.getKeyHash(key: key)
+        let dictionary:[String:Any] = [hashedKey:value]
         
-        if let data = userDefault.value(forKey: key) as? Data{
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: dictionary,options: .fragmentsAllowed)
+            guard let jsonString = String(data: jsonData, encoding: .utf8) else {
+                throw SecureUserDefaultsError.encodingError
+            }
+            if let data = try? keychainWrapper.encrypt(text: jsonString) {
+                let userDefault = UserDefaults.standard
+                userDefault.setValue(data, forKey: hashedKey)
+            }
+        }catch {
+            print("Something went wrong")
+        }
+    }
+    
+    public func getStringData(forKey key:String) -> String? {
+        let userDefault = UserDefaults.standard
+        let hashedKey = self.getKeyHash(key: key)
+        
+        if let data = userDefault.value(forKey: hashedKey) as? Data{
             // perform some decryption logic here
-            let decryptedString = self.decryptData(data:data)
-            // finshed getting the decoded data
-            return decryptedString
+            if let decryptedString = try? self.keychainWrapper.decrypt(data: data) {
+                // finshed getting the decoded data
+                return String(data: decryptedString,encoding: .utf8)
+            }
         }
     
        return nil
     }
     
-    
-    private func encryptData(value:String)->Data?{
-        var encryptData:Data?
+    public func getAnyData(forKey key:String) -> Any? {
+        let userDefault = UserDefaults.standard
+        let hashedKey = self.getKeyHash(key: key)
         
-        do
-        {
-            let dataToEncrypt = value.data(using: .utf8)
-            let secureSealBox = try ChaChaPoly.seal(dataToEncrypt!,using:SecureUserDefaults.key,nonce:SecureUserDefaults.iv)
-            encryptData = secureSealBox.combined
-        }catch{
-            print("catch: \(error)")
-        }
-        
-        return encryptData
-    }
-    
-    private func decryptData(data:Data)->String?{
-       
-        var decryptedString:String?
-        
-        print(data)
-
-        let sealedBoxToOpen = try! ChaChaPoly.SealedBox(combined: data)
-    
-        do {
-            let decryptedData = try ChaChaPoly.open(sealedBoxToOpen, using: SecureUserDefaults.key)
-            if let decryptedStr = String(data: decryptedData, encoding: .utf8){
-                decryptedString = decryptedStr
+        if let data = userDefault.value(forKey: hashedKey) as? Data{
+            // perform some decryption logic here
+            if let decryptedData = try? self.keychainWrapper.decrypt(data: data) {
+                // finshed getting the decoded data
+                do {
+                    if let jsonDictionary = try JSONSerialization.jsonObject(with: decryptedData, options: .allowFragments) as? [String:Any] {
+                        return jsonDictionary[hashedKey]
+                    }
+                } catch {
+                    return nil
+                }
             }
-        }catch{
-            print("catch",error)
         }
-
-        return decryptedString
+    
+       return nil
     }
     
-}
-
-extension Data {
-    struct HexEncodingOptions: OptionSet {
-        let rawValue: Int
-        static let upperCase = HexEncodingOptions(rawValue: 1 << 0)
-    }
-
-    func hexEncodedString(options: HexEncodingOptions = []) -> String {
-        let format = options.contains(.upperCase) ? "%02hhX" : "%02hhx"
-        return map { String(format: format, $0) }.joined()
+    private func getKeyHash(key: String) -> String {
+        let data = Data(key.utf8)
+        let hashed = SHA256.hash(data: data)
+        let hashString = hashed.compactMap { String(format: "%02x", $0) }.joined()
+        return hashString
     }
 }

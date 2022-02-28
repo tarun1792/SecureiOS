@@ -12,6 +12,7 @@
 		EE92173D25111BF100F87BA4 /* SecureUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92173C25111BF100F87BA4 /* SecureUserDefaults.swift */; };
 		EEB0D85027C2BD0400957A56 /* EmulatorChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB0D84F27C2BD0400957A56 /* EmulatorChecker.swift */; };
 		EEB0D85227C2BF9F00957A56 /* ProxyChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB0D85127C2BF9F00957A56 /* ProxyChecker.swift */; };
+		EEB0D85427CD1E1D00957A56 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB0D85327CD1E1D00957A56 /* KeychainWrapper.swift */; };
 		EEBBD42A24FAB02400CE5937 /* SecureiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEBBD42024FAB02400CE5937 /* SecureiOS.framework */; };
 		EEBBD42F24FAB02400CE5937 /* SecureiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBBD42E24FAB02400CE5937 /* SecureiOSTests.swift */; };
 		EEBBD43124FAB02400CE5937 /* SecureiOS.h in Headers */ = {isa = PBXBuildFile; fileRef = EEBBD42324FAB02400CE5937 /* SecureiOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -34,6 +35,7 @@
 		EE92173C25111BF100F87BA4 /* SecureUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureUserDefaults.swift; sourceTree = "<group>"; };
 		EEB0D84F27C2BD0400957A56 /* EmulatorChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmulatorChecker.swift; sourceTree = "<group>"; };
 		EEB0D85127C2BF9F00957A56 /* ProxyChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxyChecker.swift; sourceTree = "<group>"; };
+		EEB0D85327CD1E1D00957A56 /* KeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
 		EEBBD42024FAB02400CE5937 /* SecureiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SecureiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEBBD42324FAB02400CE5937 /* SecureiOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecureiOS.h; sourceTree = "<group>"; };
 		EEBBD42424FAB02400CE5937 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				EE92173C25111BF100F87BA4 /* SecureUserDefaults.swift */,
 				EEB0D84F27C2BD0400957A56 /* EmulatorChecker.swift */,
 				EEB0D85127C2BF9F00957A56 /* ProxyChecker.swift */,
+				EEB0D85327CD1E1D00957A56 /* KeychainWrapper.swift */,
 			);
 			path = SecureiOS;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEB0D85227C2BF9F00957A56 /* ProxyChecker.swift in Sources */,
+				EEB0D85427CD1E1D00957A56 /* KeychainWrapper.swift in Sources */,
 				EE5550D024FC0C8F00B79D63 /* BackgroundModeOverlay.swift in Sources */,
 				EE92173D25111BF100F87BA4 /* SecureUserDefaults.swift in Sources */,
 				EE5550CE24FAB95200B79D63 /* SecureiOS.swift in Sources */,

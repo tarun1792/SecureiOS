@@ -71,11 +71,26 @@ public class SecureiOS{
      
      Usage example
      ```
-     let emulator = SecureiOS.proxyCheck()
+     let proxyCheck = SecureiOS.proxyCheck()
      ```
      */
     
     public static func proxyCheck() -> Bool {
         return ProxyChecker.proxyCheck()
+    }
+    
+    /*
+     Provides secure userDefaults functionality
+     
+     Usage example
+     ```
+     SecureiOS.secureUserDefaults().saveData(forKey: "key", value: value)
+     
+     guard let value = SecureiOS.secureUserDefaults().getAnyData(forKey: "key") as? String else {return}
+     ```
+     */
+    
+    public static func secureUserDefaults() -> SecureUserDefaults {
+        return SecureUserDefaults.standard
     }
 }
