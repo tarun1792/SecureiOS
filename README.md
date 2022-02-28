@@ -48,13 +48,17 @@ Apps can run on emulator which makes it easier for the hackers to hack the app. 
 you can use below method for the check
 #### Usages
 ```Swift
-let emulatorCheck = SecureiOS.emulatorCheck()
+ if SecureiOS.emulatorCheck() {
+    print("Running on simulator")
+ }
 ```
 ### Proxy Checker
 Attackers always configure decive proxy settings to get configure device for Man In The Middle Attack.You can use this method to identify if the device proxy is configured.
 #### Usages
 ```Swift
-let proxyCheck = SecureiOS.proxyCheck()
+ if SecureiOS.proxyCheck() {
+    print("Proxy is enabled")
+ }
 ```
 
 ## Author
