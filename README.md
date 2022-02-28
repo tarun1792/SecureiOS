@@ -61,7 +61,7 @@ let proxyCheck = SecureiOS.proxyCheck()
 
 ## Author
 
-Tarun Kaushik
+[Tarun Kaushik](https://www.linkedin.com/in/tarun-kaushik/)
 
 ## License
 
