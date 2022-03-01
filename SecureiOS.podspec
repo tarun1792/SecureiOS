@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
    spec.name         = "SecureiOS"
-   spec.version      = "0.1.6"
+   spec.version      = "0.1.8"
    spec.summary      = "SecureiOS provides security checks for iOS application."
 
   # This description is used to generate tags and improve search results.
@@ -24,7 +24,7 @@ Pod::Spec.new do |spec|
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  spec.description  = "SecurityiOS is used to check the basic security requirements for iOS Applications"
+  spec.description  = "SecureiOS is a one-stop framework to implement security features in your iOS Application with minimum efforts requirement."
 
    spec.homepage     = "https://github.com/tarun1792/SecureiOS"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
