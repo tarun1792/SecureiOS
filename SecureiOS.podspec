@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
    spec.name         = "SecureiOS"
-   spec.version      = "0.1.9"
+   spec.version      = "0.1.11"
    spec.summary      = "SecureiOS provides security checks for iOS application."
 
   # This description is used to generate tags and improve search results.
