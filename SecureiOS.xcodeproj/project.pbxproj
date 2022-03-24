@@ -17,6 +17,7 @@
 		EEBBD42F24FAB02400CE5937 /* SecureiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBBD42E24FAB02400CE5937 /* SecureiOSTests.swift */; };
 		EEBBD43124FAB02400CE5937 /* SecureiOS.h in Headers */ = {isa = PBXBuildFile; fileRef = EEBBD42324FAB02400CE5937 /* SecureiOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EEBBD43B24FAB11900CE5937 /* JailBreakDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBBD43A24FAB11900CE5937 /* JailBreakDetection.swift */; };
+		EEF078B427ECD63500ECCD46 /* BiometricControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF078B327ECD63500ECCD46 /* BiometricControls.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		EEBBD42E24FAB02400CE5937 /* SecureiOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureiOSTests.swift; sourceTree = "<group>"; };
 		EEBBD43024FAB02400CE5937 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEBBD43A24FAB11900CE5937 /* JailBreakDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JailBreakDetection.swift; sourceTree = "<group>"; };
+		EEF078B327ECD63500ECCD46 /* BiometricControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricControls.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				EEB0D84F27C2BD0400957A56 /* EmulatorChecker.swift */,
 				EEB0D85127C2BF9F00957A56 /* ProxyChecker.swift */,
 				EEB0D85327CD1E1D00957A56 /* KeychainWrapper.swift */,
+				EEF078B327ECD63500ECCD46 /* BiometricControls.swift */,
 			);
 			path = SecureiOS;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				EEB0D85427CD1E1D00957A56 /* KeychainWrapper.swift in Sources */,
 				EE5550D024FC0C8F00B79D63 /* BackgroundModeOverlay.swift in Sources */,
 				EE92173D25111BF100F87BA4 /* SecureUserDefaults.swift in Sources */,
+				EEF078B427ECD63500ECCD46 /* BiometricControls.swift in Sources */,
 				EE5550CE24FAB95200B79D63 /* SecureiOS.swift in Sources */,
 				EEB0D85027C2BD0400957A56 /* EmulatorChecker.swift in Sources */,
 				EEBBD43B24FAB11900CE5937 /* JailBreakDetection.swift in Sources */,

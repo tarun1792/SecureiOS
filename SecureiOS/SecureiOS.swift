@@ -93,4 +93,55 @@ public class SecureiOS{
     public static func secureUserDefaults() -> SecureUserDefaults {
         return SecureUserDefaults.standard
     }
+    
+    /*
+     Determine if the device has implemented Biometrics or passcode
+     
+     Usages example
+     ```
+     let deviceLockAndBiometricStatus = SecureiOS.getDeviceLockAndBiometryStatus()
+     
+     if deviceLockAndBiometricStatus.isEnabled{
+        let type = deviceLockAndBiometricStatus.type
+        switch type{
+        case .touchId:
+            print(type.name)
+        case .faceId:
+            print(type.name)
+        case .passcode:
+            print(type.name)
+        case .none:
+            print(type.name)
+        @unknown default:
+            print("unknown")
+        }
+     }
+     ```
+     */
+    
+    public static func getDeviceLockAndBiometryStatus() -> BiometryStatus{
+        return BiometricControl().checkDeviceLockAndBiomtryStatus()
+    }
+    
+    
+    /*
+     Returns the supported biometryType in the device
+     
+     Usages example
+     ```
+     switch SecureiOS.getSupportedBiometryType(){
+     case .faceId:
+         print("Face Id")
+     case .touchId:
+         print("Touch Id")
+     case .none:
+         print("None")
+     @unknown default:
+         print("unknown")
+     }
+     ```
+     */
+    public static func getSupportedBiometryType() -> BiometryType {
+        return BiometricControl().supportedBiometryType
+    }
 }
