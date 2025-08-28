@@ -6,6 +6,9 @@
 
 SecureiOS is a one-stop framework to implement security features in your iOS Application with minimum efforts requirement.
 
+![SDK logo](secureiOS.png)
+
+
 
 ### Installation
 SecureiOS is available through [CocoaPods](https://cocoapods.org/pods/SecureiOS). To install it, simply add the following line to your Podfile:
